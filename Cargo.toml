@@ -1,6 +1,6 @@
 [package]
-name = "http-check"
-version = "0.1.0"
+name = "SiteBeat"
+version = "0.0.1"
 edition = "2024"
 
 [dependencies]
