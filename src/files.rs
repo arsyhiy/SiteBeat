@@ -1,12 +1,10 @@
 use std::collections::HashMap;
+use std::env;
 use std::fs;
 use std::path::PathBuf;
-use std::env;
 
 fn get_path() -> PathBuf {
-    let mut path = PathBuf::from(
-        env::var("HOME").expect("HOME не найден")
-    );
+    let mut path = PathBuf::from(env::var("HOME").expect("HOME не найден"));
 
     path.push("sites.txt");
 
@@ -14,9 +12,7 @@ fn get_path() -> PathBuf {
 }
 
 pub fn load_sites() -> HashMap<String, String> {
-
-    let content = fs::read_to_string(get_path())
-        .expect("Не удалось прочитать файл");
+    let content = fs::read_to_string(get_path()).expect("Не удалось прочитать файл");
 
     let mut sites = HashMap::new();
 
